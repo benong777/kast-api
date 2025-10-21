@@ -22,13 +22,12 @@ const getLocationById = async (req, res) => {
 
 // Create a new location
 const createLocation = async (req, res) => {
-  const { name, address } = req.body;
-
-  if (!name || !address) {
+  const { _id, name, address } = req.body;
+  if (!_id || !name || !address) {
     throw new BadRequestError('Name and address are required fields');
   }
 
-  const location = await Location.create({ name, address });
+  const location = await Location.create({ _id, name, address });
   res.status(StatusCodes.CREATED).json({ location });
 };
 

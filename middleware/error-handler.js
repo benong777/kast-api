@@ -27,7 +27,7 @@ const errorHandlerMiddleware = (err, req, res, next) => {
     customError.statusCode = 400;
   }
 
-  //-- Cast errors (ex: wrong jobId)
+  //-- Cast errors (ex: wrong commentId)
   if (err.name === 'CastError') {
     customError.msg = `No item found with id: ${err.value}.`
     customError.statusCode = 404;
