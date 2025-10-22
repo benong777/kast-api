@@ -17,7 +17,6 @@ const authenticateUser = require('./middleware/authentication');
 
 //-- Routers
 const authRouter = require('./routes/auth');
-// const commentsRouter = require('./routes/comments');
 const locationsRouter = require('./routes/locations');
 
 //-- Error handler
@@ -40,12 +39,9 @@ app.use(xss());
 
 //-- Routes
 app.use('/api/v1/auth', authRouter);
-// app.use('/api/v1/comments',authenticateUser, commentsRouter);
-// app.use('/api/v1/locations',authenticateUser, locationsRouter);
 
 // Mount locations router at /locations; this router will internally mount comments
 app.use('/api/v1/locations',authenticateUser, locationsRouter);
-// app.use('/api/v1/locations',authenticateUser, commentsRouter);  // Merged to handle /locations/:locationId/comments properly
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);

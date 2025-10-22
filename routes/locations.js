@@ -12,7 +12,6 @@ const {
 } = require('../controllers/locations');
 
 //-- Locations
-// router.route('/').post(createLocation).get(getAllLocations);
 router.route('/').post(createLocation)
 router.route('/:id').get(getLocationById).delete(deleteLocation).patch(updateLocation);
 

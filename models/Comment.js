@@ -16,10 +16,6 @@ const CommentSchema = new mongoose.Schema({
     ref: 'Location',                      // reference to Location model
     required: [true, 'Please specify the location this comment belongs to.']
   },
-  // createdAt: {
-  //   type: Date,
-  //   default: Date.now,
-  // }
 }, { timestamps: true });                 // Generate 'createdAt' and 'updatedAt' by default
 
 module.exports = mongoose.model('Comment', CommentSchema);
