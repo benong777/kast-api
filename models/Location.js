@@ -13,6 +13,6 @@ const LocationSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please provide a location address.']
   }
-}, { timestamps: true });
+}, { timestamps: true });   // Generate 'createdAt' and 'updatedAt' by default
 
 module.exports = mongoose.model('Location', LocationSchema);
