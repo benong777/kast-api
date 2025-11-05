@@ -37,8 +37,9 @@ const login = async (req, res) => {
 
   //-- Got user: create token (createJWT method is from models/User)
   const token = user.createJWT();
+
   res.status(StatusCodes.OK).json({ 
-      user: { name: user.name },
+      user: { name: user.name, userId: user._id },
       token
   });
 }
